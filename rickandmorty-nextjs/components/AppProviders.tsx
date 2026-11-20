@@ -5,6 +5,7 @@ import { ProveedorSesion, useSesionExplorador } from "@/context/AuthContext";
 import { ProveedorFavoritos } from "@/context/FavoritesContext";
 import { ProveedorTema } from "@/context/ThemeContext";
 import InterruptorTema from "@/components/atoms/ThemeToggle";
+import MotionProvider from "@/components/motion/MotionProvider";
 
 /**
  * Reinicia el estado de favoritos al cambiar de cuenta, usando su id como key.
@@ -24,5 +25,5 @@ function FavoritosDeLaCuenta({ children }: { children: ReactNode }) {
  * @returns {React.JSX.Element} Proveedores de la aplicación.
  */
 export default function ProveedoresAplicacion({ children }: { children: ReactNode }) {
-  return <ProveedorTema><ProveedorSesion><FavoritosDeLaCuenta>{children}</FavoritosDeLaCuenta></ProveedorSesion><InterruptorTema /></ProveedorTema>;
+  return <ProveedorTema><MotionProvider><ProveedorSesion><FavoritosDeLaCuenta>{children}</FavoritosDeLaCuenta></ProveedorSesion></MotionProvider><InterruptorTema /></ProveedorTema>;
 }

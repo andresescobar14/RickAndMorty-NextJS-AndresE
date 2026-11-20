@@ -81,20 +81,20 @@ export default function PanelCuenta() {
   if (!exploradorActual) return null;
   return (
     <>
-      <dl className="account-summary">
+      <dl className="account-summary" data-aos="fade-up">
         <div><dt>Explorador</dt><dd>{exploradorActual.name}</dd></div>
         <div><dt>Correo electrónico</dt><dd>{exploradorActual.email}</dd></div>
         <div><dt>Fecha de registro</dt><dd>{new Intl.DateTimeFormat("es", { dateStyle: "long" }).format(new Date(exploradorActual.createdAt))}</dd></div>
         <div><dt>Favoritos guardados</dt><dd>{identificadoresFavoritos.length}</dd></div>
       </dl>
       <div className="account-forms">
-        <section className="settings-panel"><h2>Tu nombre en el archivo</h2><p>El nombre con el que te reconoceremos en el multiverso.</p>
+        <section className="settings-panel" data-aos="fade-up" data-aos-delay="100"><h2>Tu nombre en el archivo</h2><p>El nombre con el que te reconoceremos en el multiverso.</p>
           <form className="auth-form" onSubmit={guardarNombreCuenta} noValidate onChange={() => mostrarConfirmacionNombreCuenta("")}>
             <CampoFormulario id="account-name" label="Nombre" value={nombreExplorador} onChange={(eventoCuenta) => cambiarNombreExplorador(eventoCuenta.target.value)} error={problemaNombreCuenta} autoComplete="name" required />
             <BotonAccion type="submit">Guardar nombre</BotonAccion><p role="status" className="form-status">{confirmacionNombreCuenta}</p>
           </form>
         </section>
-        <section className="settings-panel"><h2>Cambiar contraseña</h2><p>Confirma tu contraseña actual antes de elegir una nueva.</p>
+        <section className="settings-panel" data-aos="fade-up" data-aos-delay="200"><h2>Cambiar contraseña</h2><p>Confirma tu contraseña actual antes de elegir una nueva.</p>
           <form className="auth-form" onSubmit={guardarNuevaContrasena} noValidate onChange={() => { mostrarConfirmacionCambioClave(""); mostrarProblemaCambioClave(""); }}>
             <CampoFormulario id="current-password" label="Contraseña actual" type="password" value={claveActual} onChange={(eventoCuenta) => cambiarClaveActual(eventoCuenta.target.value)} error={erroresCambioClave.currentPassword} autoComplete="current-password" required />
             <CampoFormulario id="new-password" label="Nueva contraseña" type="password" value={claveNueva} onChange={(eventoCuenta) => cambiarClaveNueva(eventoCuenta.target.value)} error={erroresCambioClave.newPassword} autoComplete="new-password" required />
@@ -105,7 +105,7 @@ export default function PanelCuenta() {
           </form>
         </section>
       </div>
-      <section className="logout-section"><div><h2>Cerrar sesión</h2><p>Tu cuenta y tus favoritos seguirán guardados en este navegador.</p></div><BotonAccion className="button-quiet" onClick={salirDelExplorador}>Cerrar sesión</BotonAccion>{problemaCierreSesion && <p role="alert" className="form-error">{problemaCierreSesion}</p>}</section>
+      <section className="logout-section" data-aos="fade-up"><div><h2>Cerrar sesión</h2><p>Tu cuenta y tus favoritos seguirán guardados en este navegador.</p></div><BotonAccion className="button-quiet" onClick={salirDelExplorador}>Cerrar sesión</BotonAccion>{problemaCierreSesion && <p role="alert" className="form-error">{problemaCierreSesion}</p>}</section>
     </>
   );
 }

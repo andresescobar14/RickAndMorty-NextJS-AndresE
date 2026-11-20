@@ -59,26 +59,27 @@ export default function FichaPersonaje({ identificadorPersonaje: identificadorFi
     <>
       <Link className="text-link detail-back" href={rutaRegreso}>← Volver al listado</Link>
       <article className="character-detail">
-        <div className="detail-image">
+        <span className="detail-watermark" aria-hidden="true">#{String(personajeDelArchivo.id).padStart(3, "0")}</span>
+        <div className="detail-image" data-aos="zoom-in-right">
           <RetratoPersonaje direccion={personajeDelArchivo.image} nombre={personajeDelArchivo.name} ancho={600} alto={600} tamanos="(max-width: 700px) 100vw, 40vw" precargar />
           <p className="auth-eyebrow">EXPEDIENTE / {String(personajeDelArchivo.id).padStart(3, "0")}</p>
         </div>
-        <div className="detail-content">
+        <div className="detail-content" data-aos="fade-left" data-aos-delay="120">
           <div className="detail-title-row"><EtiquetaEstado status={personajeDelArchivo.status} /><BotonFavorito identificadorPersonaje={personajeDelArchivo.id} nombrePersonaje={personajeDelArchivo.name} /></div>
           <h1>{personajeDelArchivo.name}</h1>
           <dl className="detail-facts">
-            <div><dt>Especie</dt><dd>{personajeDelArchivo.species}</dd></div>
-            <div><dt>Tipo</dt><dd>{personajeDelArchivo.type || "No especificado"}</dd></div>
-            <div><dt>Género</dt><dd>{etiquetasGeneroPersonaje[personajeDelArchivo.gender]}</dd></div>
-            <div><dt>Origen</dt><dd>{personajeDelArchivo.origin.name === "unknown" ? "Desconocido" : personajeDelArchivo.origin.name}</dd></div>
-            <div><dt>Ubicación actual</dt><dd>{personajeDelArchivo.location.name === "unknown" ? "Desconocida" : personajeDelArchivo.location.name}</dd></div>
-            <div><dt>Episodios</dt><dd>{personajeDelArchivo.episode.length} apariciones</dd></div>
+            <div data-aos="fade-up" data-aos-delay="200"><dt>Especie</dt><dd>{personajeDelArchivo.species}</dd></div>
+            <div data-aos="fade-up" data-aos-delay="270"><dt>Tipo</dt><dd>{personajeDelArchivo.type || "No especificado"}</dd></div>
+            <div data-aos="fade-up" data-aos-delay="340"><dt>Género</dt><dd>{etiquetasGeneroPersonaje[personajeDelArchivo.gender]}</dd></div>
+            <div data-aos="fade-up" data-aos-delay="410"><dt>Origen</dt><dd>{personajeDelArchivo.origin.name === "unknown" ? "Desconocido" : personajeDelArchivo.origin.name}</dd></div>
+            <div data-aos="fade-up" data-aos-delay="480"><dt>Ubicación actual</dt><dd>{personajeDelArchivo.location.name === "unknown" ? "Desconocida" : personajeDelArchivo.location.name}</dd></div>
+            <div data-aos="fade-up" data-aos-delay="550"><dt>Episodios</dt><dd>{personajeDelArchivo.episode.length} apariciones</dd></div>
           </dl>
         </div>
       </article>
       <section className="episodes-section" aria-labelledby="episodes-title">
-        <div className="section-heading"><h2 id="episodes-title">Su recorrido por la serie</h2><span>{episodiosPersonaje.length} episodios</span></div>
-        <ol className="episode-list">{episodiosPersonaje.map((episodioSerie) => <li key={episodioSerie.id}><span>{episodioSerie.episode}</span><h3>{episodioSerie.name}</h3></li>)}</ol>
+        <div className="section-heading" data-aos="fade-up"><h2 id="episodes-title">Su recorrido por la serie</h2><span>{episodiosPersonaje.length} episodios</span></div>
+        <ol className="episode-list">{episodiosPersonaje.map((episodioSerie, posicion) => <li key={episodioSerie.id} data-aos="fade-up" data-aos-delay={(posicion % 3) * 70}><span>{episodioSerie.episode}</span><h3>{episodioSerie.name}</h3></li>)}</ol>
       </section>
     </>
   );

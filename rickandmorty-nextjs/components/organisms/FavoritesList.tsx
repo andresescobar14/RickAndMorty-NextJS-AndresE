@@ -47,7 +47,7 @@ export default function ColeccionFavoritos() {
     <section aria-busy={cargandoColeccion || consultandoFavoritos}>
       {(cargandoColeccion || consultandoFavoritos) && <p role="status" className="results-count">Cargando favoritos…</p>}
       <div className="character-grid">
-        {personajesEncontrados.filter((personajeDelArchivo) => identificadoresFavoritos.includes(personajeDelArchivo.id)).map((personajeDelArchivo) => <TarjetaPersonaje key={personajeDelArchivo.id} personaje={personajeDelArchivo} rutaRegreso="/favoritos" />)}
+        {personajesEncontrados.filter((personajeDelArchivo) => identificadoresFavoritos.includes(personajeDelArchivo.id)).map((personajeDelArchivo, posicion) => <TarjetaPersonaje key={personajeDelArchivo.id} personaje={personajeDelArchivo} rutaRegreso="/favoritos" indice={posicion} />)}
       </div>
     </section>
   );

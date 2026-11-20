@@ -53,8 +53,8 @@ export default function ResultadosPersonajes() {
   const rutaRegreso = consultaPersonajes ? `/?${consultaPersonajes}` : "/";
   return (
     <>
-      <p className="results-count" role="status">{datosPersonajes.info.count} personajes en el archivo <span>SECTOR / {String(filtrosPersonajes.page).padStart(2, "0")}</span></p>
-      <div className="character-grid">{datosPersonajes.results.map((personajeDelArchivo) => <TarjetaPersonaje key={personajeDelArchivo.id} personaje={personajeDelArchivo} rutaRegreso={rutaRegreso} />)}</div>
+      <p className="results-count" role="status" data-aos="fade-right">{datosPersonajes.info.count} personajes en el archivo <span>SECTOR / {String(filtrosPersonajes.page).padStart(2, "0")}</span></p>
+      <div className="character-grid">{datosPersonajes.results.map((personajeDelArchivo, posicion) => <TarjetaPersonaje key={personajeDelArchivo.id} personaje={personajeDelArchivo} rutaRegreso={rutaRegreso} indice={posicion} />)}</div>
       <Pagination filtrosPersonajes={filtrosPersonajes} totalPaginas={datosPersonajes.info.pages} />
     </>
   );

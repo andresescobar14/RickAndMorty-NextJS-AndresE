@@ -85,7 +85,7 @@ export default function FiltrosPersonajes() {
   }
 
   return (
-    <form className="filter-panel" role="search" aria-label="Buscar personajes" onSubmit={(eventoBusqueda) => {
+    <form className="filter-panel" data-aos="fade-up" data-aos-delay="150" role="search" aria-label="Buscar personajes" onSubmit={(eventoBusqueda) => {
       eventoBusqueda.preventDefault();
       if (esperaBusqueda.current !== null) window.clearTimeout(esperaBusqueda.current);
       aplicarBusquedaPersonajes(valoresBusqueda);

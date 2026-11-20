@@ -1,5 +1,7 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
+import PortalOrb from "@/components/motion/PortalOrb";
+import SplitHeading from "@/components/motion/SplitHeading";
 
 /** Contenido variable de la distribución compartida por login y registro. */
 type ContenidoAcceso = {
@@ -35,21 +37,13 @@ export default function PlantillaAcceso({ title: tituloPagina, description: desc
         <div className="auth-layout">
           <div className="auth-intro">
             <p className="auth-eyebrow">MÁS ALLÁ DE TU DIMENSIÓN</p>
-            <p className="auth-headline">El caos tiene<br /><span>nombre y ficha.</span></p>
-            <p className="auth-description">
+            <SplitHeading as="p" className="auth-headline" lineas={[{ texto: "El caos tiene" }, { texto: "nombre y ficha.", className: "text-gradient" }]} />
+            <p className="auth-description" data-aos="fade-up" data-aos-delay="300">
               Explora personajes, conecta sus historias y guarda tus favoritos del multiverso.
             </p>
-            <div className="portal-diagram" aria-hidden="true">
-              <span className="portal-ring" />
-              <span className="portal-ring portal-ring-inner" />
-              <div className="portal-center">
-                <span>DIMENSIÓN</span>
-                <strong>C-137</strong>
-              </div>
-              <span className="portal-caption">FIG. 01 / PUNTO DE ORIGEN</span>
-            </div>
+            <PortalOrb className="auth-portal" etiqueta="DIMENSIÓN" titulo="C-137" />
           </div>
-          <section className="auth-card">
+          <section className="auth-card" data-aos="fade-left" data-aos-duration="1000">
             <div className="card-index">
               <span>EXPLORER / ACCESO PERSONAL</span>
               <span aria-hidden="true">↗</span>

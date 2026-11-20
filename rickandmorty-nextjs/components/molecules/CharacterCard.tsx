@@ -4,18 +4,20 @@ import type { PersonajeApi } from "@/types/character";
 import { etiquetasGeneroPersonaje } from "@/lib/labels";
 import BotonFavorito from "@/components/atoms/FavoriteButton";
 import EtiquetaEstado from "@/components/atoms/StatusBadge";
+import TiltCard from "@/components/motion/TiltCard";
 
 /**
  * Presenta un personaje y conserva la URL del listado al abrir su ficha.
  * @param {Object} props - Datos y destino de regreso.
  * @param {PersonajeApi} props.personaje - Personaje obtenido de la API.
  * @param {string} [props.rutaRegreso='/'] - Listado con sus filtros o página de favoritos.
+ * @param {number} [props.indice=0] - Posición en la retícula para escalonar la animación.
  * @returns {React.JSX.Element} Tarjeta enlazada con imagen optimizada y favorito.
  */
-export default function TarjetaPersonaje({ personaje: personajeDelArchivo, rutaRegreso = "/" }: { personaje: PersonajeApi; rutaRegreso?: string }) {
+export default function TarjetaPersonaje({ personaje: personajeDelArchivo, rutaRegreso = "/", indice = 0 }: { personaje: PersonajeApi; rutaRegreso?: string; indice?: number }) {
   const enlacePersonaje = `/personaje/${personajeDelArchivo.id}?from=${encodeURIComponent(rutaRegreso)}`;
   return (
-    <article className="character-card">
+    <TiltCard className="character-card" indice={indice}>
       <div className="character-portrait">
         <Link href={enlacePersonaje}>
           <RetratoPersonaje direccion={personajeDelArchivo.image} nombre={personajeDelArchivo.name} ancho={300} alto={300}
@@ -29,6 +31,6 @@ export default function TarjetaPersonaje({ personaje: personajeDelArchivo, rutaR
         <h2><Link href={enlacePersonaje}>{personajeDelArchivo.name}</Link></h2>
         <p>{personajeDelArchivo.species} <span aria-hidden="true">/</span> {etiquetasGeneroPersonaje[personajeDelArchivo.gender]}</p>
       </div>
-    </article>
+    </TiltCard>
   );
 }

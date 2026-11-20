@@ -1,3 +1,4 @@
+import SplitHeading from "@/components/motion/SplitHeading";
 import { crearMetadatosPagina } from "@/lib/metadata";
 import PanelCuenta from "@/components/organisms/AccountPanel";
 
@@ -11,6 +12,6 @@ export const metadata = crearMetadatosPagina("Mi cuenta", "Consulta y administra
  */
 export default function PaginaCuenta() {
   return (
-    <><header className="page-heading"><p className="auth-eyebrow">ARCHIVO / IDENTIDAD DEL EXPLORADOR</p><h1>Mi cuenta</h1><p>Tu perfil y tus preferencias, en un solo lugar.</p></header><PanelCuenta /></>
+    <><header className="page-heading"><p className="auth-eyebrow">ARCHIVO / IDENTIDAD DEL EXPLORADOR</p><SplitHeading lineas={[{ texto: "Mi cuenta" }]} /><p data-aos="fade-up" data-aos-delay="200">Tu perfil y tus preferencias, en un solo lugar.</p></header><PanelCuenta /></>
   );
 }

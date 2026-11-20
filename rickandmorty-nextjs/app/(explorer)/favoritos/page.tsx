@@ -1,3 +1,4 @@
+import SplitHeading from "@/components/motion/SplitHeading";
 import { crearMetadatosPagina } from "@/lib/metadata";
 import ColeccionFavoritos from "@/components/organisms/FavoritesList";
 
@@ -11,6 +12,6 @@ export const metadata = crearMetadatosPagina("Mis favoritos", "Consulta tus pers
  */
 export default function PaginaFavoritos() {
   return (
-    <><header className="page-heading"><p className="auth-eyebrow">ARCHIVO / COLECCIÓN PERSONAL</p><h1>Mis favoritos</h1><p>Los personajes que elegiste conservar, más allá de cualquier dimensión.</p></header><ColeccionFavoritos /></>
+    <><header className="page-heading"><p className="auth-eyebrow">ARCHIVO / COLECCIÓN PERSONAL</p><SplitHeading lineas={[{ texto: "Mis favoritos" }]} /><p data-aos="fade-up" data-aos-delay="200">Los personajes que elegiste conservar, más allá de cualquier dimensión.</p></header><ColeccionFavoritos /></>
   );
 }
