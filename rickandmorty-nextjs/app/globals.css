@@ -7,53 +7,53 @@
  */
 :root {
   color-scheme: light;
-  --background: #efede3;
-  --background-2: #e6e3d5;
-  --foreground: #0d130c;
-  --muted: #424d3e;
-  --border: #0d130c26;
-  --border-strong: #0d130c66;
-  --panel: #fbfaf4;
-  --panel-end: #f1efe4;
+  --background: #eef2f9;
+  --background-2: #e2e8f4;
+  --foreground: #070b16;
+  --muted: #3f4a63;
+  --border: #070b1626;
+  --border-strong: #070b1666;
+  --panel: #fbfcff;
+  --panel-end: #eef2fb;
   --input: #ffffffb3;
-  --placeholder: #6d7867;
+  --placeholder: #66718a;
   --error: #b3123a;
-  --link: #2c6e00;
-  --accent: #2c6e00;
-  --acid: #b6ff3b;
-  --on-acid: #0b1205;
-  --cyan: #007d92;
-  --glow: #8fdc1a55;
-  --shadow: 0 24px 60px -24px #1a2a0f40;
-  --grid-line: #0d130c0d;
+  --link: #1d4ed8;
+  --accent: #1d4ed8;
+  --acid: #2563eb;
+  --on-acid: #ffffff;
+  --cyan: #0369a1;
+  --glow: #2563eb40;
+  --shadow: 0 24px 60px -24px #0f1a3a40;
+  --grid-line: #070b160d;
   --blue: var(--accent);
-  --gradient-start: #2c6e00;
-  --gradient-end: #007d92;
+  --gradient-start: #1d4ed8;
+  --gradient-end: #0369a1;
 }
 
 .dark {
   color-scheme: dark;
-  --background: #060807;
-  --background-2: #0b0f0c;
-  --foreground: #e8f3e1;
-  --muted: #b0bdaa;
-  --border: #e8f3e11f;
-  --border-strong: #e8f3e152;
-  --panel: #0d1210;
-  --panel-end: #090c0b;
-  --input: #050706cc;
-  --placeholder: #849180;
+  --background: #04060c;
+  --background-2: #0a0f1c;
+  --foreground: #e8eefc;
+  --muted: #a9b6d1;
+  --border: #e8eefc1f;
+  --border-strong: #e8eefc52;
+  --panel: #0a1020;
+  --panel-end: #070b16;
+  --input: #03050bcc;
+  --placeholder: #7f8cab;
   --error: #ff8fa6;
-  --link: #b6ff3b;
-  --accent: #b6ff3b;
-  --acid: #b6ff3b;
-  --on-acid: #0b1205;
-  --cyan: #3ee6ff;
-  --glow: #b6ff3b40;
+  --link: #6aa5ff;
+  --accent: #6aa5ff;
+  --acid: #2f7bff;
+  --on-acid: #ffffff;
+  --cyan: #5ad1ff;
+  --glow: #2f7bff4d;
   --shadow: 0 30px 80px -30px #000000;
-  --grid-line: #e8f3e10a;
-  --gradient-start: #b6ff3b;
-  --gradient-end: #3ee6ff;
+  --grid-line: #e8eefc0a;
+  --gradient-start: #6aa5ff;
+  --gradient-end: #5ad1ff;
 }
 
 @theme inline {
@@ -183,7 +183,7 @@ body::after {
   pointer-events: none;
   background:
     radial-gradient(ellipse 50% 60% at 85% 0%, var(--glow), transparent 70%),
-    radial-gradient(ellipse 40% 50% at 0% 10%, #3ee6ff1a, transparent 70%);
+    radial-gradient(ellipse 40% 50% at 0% 10%, #5ad1ff1a, transparent 70%);
 }
 
 .explorer-header {
@@ -236,7 +236,7 @@ body::after {
 
 .nav-links a:hover { color: var(--foreground); }
 .nav-links a[aria-current="page"] { background: var(--acid); color: var(--on-acid); }
-.nav-links a[aria-current="page"] .nav-count { border-color: #0b120540; color: var(--on-acid); }
+.nav-links a[aria-current="page"] .nav-count { border-color: #ffffff55; color: var(--on-acid); }
 .nav-actions { gap: 12px; }
 
 .nav-user {
@@ -398,7 +398,7 @@ body::after {
     linear-gradient(var(--grid-line) 1px, transparent 1px) 0 0 / 72px 72px,
     linear-gradient(90deg, var(--grid-line) 1px, transparent 1px) 0 0 / 72px 72px,
     radial-gradient(ellipse 60% 70% at 15% 30%, var(--glow), transparent 70%),
-    radial-gradient(ellipse 50% 50% at 100% 100%, #3ee6ff1f, transparent 70%),
+    radial-gradient(ellipse 50% 50% at 100% 100%, #5ad1ff1f, transparent 70%),
     var(--background);
 }
 
@@ -457,8 +457,8 @@ body::after {
 }
 
 .brand-mark::before, .brand-mark::after { content: ""; position: absolute; border-radius: 50%; z-index: -1; }
-.brand-mark::before { inset: 0; background: conic-gradient(from 0deg, var(--acid), #3ee6ff, #1b5e00, var(--acid)); animation: spin 6s linear infinite; }
-.brand-mark::after { inset: 3px; background: radial-gradient(circle at 35% 30%, #eaffc2, var(--acid) 55%, #6cc417); }
+.brand-mark::before { inset: 0; background: conic-gradient(from 0deg, var(--acid), var(--cyan), #0a2a7a, var(--acid)); animation: spin 6s linear infinite; }
+.brand-mark::after { inset: 3px; background: radial-gradient(circle at 35% 30%, #cfe0ff, var(--acid) 55%, #1f4fd1); }
 .brand-link:hover .brand-mark::before { animation-duration: 1s; }
 
 @keyframes spin { to { transform: rotate(360deg); } }
@@ -508,7 +508,7 @@ body::after {
   z-index: -1;
   border-radius: inherit;
   padding: 1px;
-  background: conic-gradient(from var(--angle, 0deg), transparent 70%, var(--acid), #3ee6ff, transparent);
+  background: conic-gradient(from var(--angle, 0deg), transparent 70%, var(--acid), var(--cyan), transparent);
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -607,7 +607,7 @@ select.form-input {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: #0b1205;
+  background: #030712;
   border-radius: inherit;
   transform: translateY(101%);
   transition: transform 0.45s cubic-bezier(0.7, 0, 0.2, 1);
@@ -726,9 +726,9 @@ select.form-input {
   z-index: 1;
   padding: 6px 10px;
   border-radius: 999px;
-  background: #060807b8;
+  background: #04060cb8;
   backdrop-filter: blur(6px);
-  color: #e8f3e1;
+  color: #e8eefc;
   font-family: var(--font-geist-mono), monospace;
   font-size: 11px;
   letter-spacing: 0.1em;
@@ -754,9 +754,9 @@ select.form-input {
   place-items: center;
   border: 1px solid #ffffff30;
   border-radius: 50%;
-  background: #060807a6;
+  background: #04060ca6;
   backdrop-filter: blur(8px);
-  color: #e8f3e1;
+  color: #e8eefc;
   font-size: 22px;
   line-height: 1;
   cursor: pointer;

@@ -55,33 +55,33 @@ export default function PortalOrb({ etiqueta = "DIMENSIÓN", titulo = "C-137", c
       <svg className="portal-svg" viewBox="0 0 400 400">
         <defs>
           <radialGradient id="pg-core" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="#f2ffd6" />
-            <stop offset="35%" stopColor="#b6ff3b" />
-            <stop offset="75%" stopColor="#3fae1a" />
-            <stop offset="100%" stopColor="#0e3b05" />
+            <stop offset="0%" stopColor="#e6f0ff" />
+            <stop offset="35%" stopColor="#4d8dff" />
+            <stop offset="75%" stopColor="#1e4fd8" />
+            <stop offset="100%" stopColor="#061a4d" />
           </radialGradient>
           <linearGradient id="pg-ring" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#b6ff3b" />
-            <stop offset="100%" stopColor="#3ee6ff" />
+            <stop offset="0%" stopColor="#4d8dff" />
+            <stop offset="100%" stopColor="#7fd8ff" />
           </linearGradient>
         </defs>
         <g className="ring-a"><circle cx="200" cy="200" r="190" fill="none" stroke="url(#pg-ring)" strokeWidth="1" strokeDasharray="2 10" opacity="0.7" /></g>
         <g className="ring-b">
           <circle cx="200" cy="200" r="168" fill="none" stroke="currentColor" strokeOpacity="0.18" strokeWidth="1" />
-          <path d="M200 32 A168 168 0 0 1 368 200" fill="none" stroke="#b6ff3b" strokeWidth="3" strokeLinecap="round" />
-          <path d="M200 368 A168 168 0 0 1 32 200" fill="none" stroke="#3ee6ff" strokeWidth="3" strokeLinecap="round" />
+          <path d="M200 32 A168 168 0 0 1 368 200" fill="none" stroke="#4d8dff" strokeWidth="3" strokeLinecap="round" />
+          <path d="M200 368 A168 168 0 0 1 32 200" fill="none" stroke="#7fd8ff" strokeWidth="3" strokeLinecap="round" />
         </g>
-        <g className="ring-c"><circle cx="200" cy="200" r="142" fill="none" stroke="#b6ff3b" strokeOpacity="0.5" strokeWidth="1" strokeDasharray="30 14 4 14" /></g>
+        <g className="ring-c"><circle cx="200" cy="200" r="142" fill="none" stroke="#4d8dff" strokeOpacity="0.5" strokeWidth="1" strokeDasharray="30 14 4 14" /></g>
         <g className="portal-core">
           <circle cx="200" cy="200" r="118" fill="url(#pg-core)" />
-          <g className="swirl" fill="none" stroke="#0e3b05" strokeOpacity="0.35" strokeWidth="6" strokeLinecap="round">
+          <g className="swirl" fill="none" stroke="#061a4d" strokeOpacity="0.35" strokeWidth="6" strokeLinecap="round">
             <path d="M200 110 C 260 120, 290 180, 260 230" />
             <path d="M290 200 C 280 260, 220 290, 170 260" />
             <path d="M200 290 C 140 280, 110 220, 140 170" />
             <path d="M110 200 C 120 140, 180 110, 230 140" />
           </g>
         </g>
-        {chispas.map((c, i) => <circle key={i} className="spark" cx={c.x} cy={c.y} r={c.r} fill={i % 2 ? "#3ee6ff" : "#b6ff3b"} />)}
+        {chispas.map((c, i) => <circle key={i} className="spark" cx={c.x} cy={c.y} r={c.r} fill={i % 2 ? "#7fd8ff" : "#4d8dff"} />)}
       </svg>
       <div className="portal-label"><span>{etiqueta}</span><strong>{titulo}</strong></div>
     </div>
