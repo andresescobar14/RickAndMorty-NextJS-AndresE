@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs><linearGradient id="blue" x2="1" y2="1"><stop stop-color="#2563eb"/><stop offset="1" stop-color="#38bdf8"/></linearGradient></defs>
+  <rect width="128" height="128" rx="24" fill="#050914"/>
+  <circle cx="64" cy="64" r="47" fill="none" stroke="url(#blue)" stroke-width="5"/>
+  <circle cx="64" cy="64" r="34" fill="#102c66" stroke="#60a5fa" stroke-dasharray="2 5"/>
+  <text x="64" y="72" text-anchor="middle" fill="#edf4ff" font-family="Arial,sans-serif" font-size="24" font-weight="700">R&amp;M</text>
+</svg>
