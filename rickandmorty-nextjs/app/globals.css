@@ -322,6 +322,7 @@ body::after {
   .nav-links { order: 3; width: 100%; justify-content: space-between; }
   .nav-links a { padding: 9px 12px; }
   .nav-user { display: none; }
+  .explorer-content .filter-panel, .explorer-content .results-count { scroll-margin-top: 150px; }
   .explorer-content { padding: 40px 16px 80px; }
   .hero-copy, .page-heading > p:last-child { font-size: 17px; }
   .marquee-bleed { margin-bottom: 36px; }
@@ -663,6 +664,7 @@ select.form-input {
 }
 
 .filter-panel .filter-clear { min-height: 54px; }
+.filter-panel { scroll-margin-top: 110px; }
 .filter-placeholder { min-height: 120px; }
 
 .results-count {

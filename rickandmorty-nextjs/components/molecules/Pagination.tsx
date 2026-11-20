@@ -14,9 +14,9 @@ export default function Pagination({ filtrosPersonajes, totalPaginas }: { filtro
   const paginaSiguiente = `/?${crearConsultaPersonajes({ ...filtrosPersonajes, page: filtrosPersonajes.page + 1 })}`;
   return (
     <nav className="pagination" aria-label="Paginación de personajes">
-      {filtrosPersonajes.page > 1 ? <Link href={paginaAnterior} className="pagination-button">← Anterior</Link> : <span className="pagination-button" aria-disabled="true">← Anterior</span>}
+      {filtrosPersonajes.page > 1 ? <Link href={paginaAnterior} scroll={false} className="pagination-button">← Anterior</Link> : <span className="pagination-button" aria-disabled="true">← Anterior</span>}
       <p>Página <strong>{filtrosPersonajes.page}</strong> de {totalPaginas}</p>
-      {filtrosPersonajes.page < totalPaginas ? <Link href={paginaSiguiente} className="pagination-button">Siguiente →</Link> : <span className="pagination-button" aria-disabled="true">Siguiente →</span>}
+      {filtrosPersonajes.page < totalPaginas ? <Link href={paginaSiguiente} scroll={false} className="pagination-button">Siguiente →</Link> : <span className="pagination-button" aria-disabled="true">Siguiente →</span>}
     </nav>
   );
 }

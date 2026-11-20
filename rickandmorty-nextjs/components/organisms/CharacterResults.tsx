@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { consultarPersonajes } from "@/services/characters";
 import { crearConsultaPersonajes, leerFiltrosDeUrl } from "@/lib/filters";
@@ -23,6 +23,16 @@ export default function ResultadosPersonajes() {
   const [cargandoPersonajes, marcarCargaPersonajes] = useState(true);
   const [problemaPersonajes, mostrarProblemaPersonajes] = useState("");
   const [intentosPersonajes, aumentarIntentosPersonajes] = useState(0);
+  const paginaAnterior = useRef(filtrosPersonajes.page);
+
+  useEffect(() => {
+    // Al cambiar de página lleva al usuario a los filtros para que vea los resultados nuevos.
+    if (paginaAnterior.current === filtrosPersonajes.page) return;
+    paginaAnterior.current = filtrosPersonajes.page;
+    const reducir = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const destino = window.matchMedia("(max-width: 600px)").matches ? ".results-count" : ".filter-panel";
+    document.querySelector(destino)?.scrollIntoView({ behavior: reducir ? "auto" : "smooth", block: "start" });
+  }, [filtrosPersonajes.page]);
 
   useEffect(() => {
     const cancelacionPeticion = new AbortController();
